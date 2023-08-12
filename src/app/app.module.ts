@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { RouterModule } from '@angular/router';
 
 //Angular Material Components
 import {MatCheckboxModule} from '@angular/material/checkbox';
@@ -81,7 +81,17 @@ import { MenuComponent } from './components/menu/menu.component';
     MatSnackBarModule,
     MatTableModule,
     MatSortModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    RouterModule.forRoot([
+      {
+        path:'inicio',
+        component:InicioComponent
+      },
+      {
+        path:'menu',
+        component:MenuComponent
+      }
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]

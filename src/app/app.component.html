@@ -457,8 +457,24 @@
 
 </div>
 -->
+<div class="grid grid-cols-5 content-center bg-emerald-600 p-4 navbar">
+  <div class="col-span-2">
+    <span class="text-2xl">Logotipo</span>
+  </div>
+  <div class="col-span-3 justify-self-end">
+    <ul class="flex gap-4">
+      <li class="text-2xl navItem" routerLink="/inicio" routerLinkActive="activeButton">Inicio</li>
+      <li class="text-2xl navItem" routerLink="/menu" routerLinkActive="activeButton">Menu</li>
+      
+    </ul>
+
+  </div>
+
+</div>
+
 <h1 class="text-3xl font-bold underline">
   Hello world!
 </h1>
 <mat-slide-toggle>Toggle me!</mat-slide-toggle>
+
 <router-outlet></router-outlet> 
