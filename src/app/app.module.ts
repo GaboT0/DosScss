@@ -84,7 +84,7 @@ import { MenuComponent } from './components/menu/menu.component';
     MatPaginatorModule,
     RouterModule.forRoot([
       {
-        path:'inicio',
+        path:':id/inicio',
         component:InicioComponent
       },
       {

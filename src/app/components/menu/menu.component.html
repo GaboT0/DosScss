@@ -1,17 +1,18 @@
-<table mat-table [dataSource]="datasourceTable ?? []" class="mat-elevation-z8">
+<div class="p-4">
+  <table mat-table [dataSource]="datasourceTable ?? []" class="mat-elevation-z8">
 
     <!--- Note that these columns can be defined in any order.
           The actual rendered columns are set as a property on the row definition" -->
-  
+
     <!-- Position Column -->
-    <ng-container matColumnDef="ID">
-      <th mat-header-cell *matHeaderCellDef> ID </th>
-      <td mat-cell *matCellDef="let element"> {{element.idItem}} </td>
+    <ng-container matColumnDef="ID" >
+      <th mat-header-cell *matHeaderCellDef ngClass="p-2"> ID </th>
+      <td mat-cell *matCellDef="let element" class="text-center"> {{element.idItem}} </td>
     </ng-container>
   
     <!-- Name Column -->
     <ng-container matColumnDef="Nombre">
-      <th mat-header-cell *matHeaderCellDef> Nombre </th>
+      <th mat-header-cell *matHeaderCellDef > Nombre </th>
       <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
     </ng-container>
   
@@ -26,7 +27,24 @@
       <th mat-header-cell *matHeaderCellDef> Descripcion </th>
       <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
     </ng-container>
-  
+    <!-- accion -->
+    <ng-container matColumnDef="Acciones" >
+      <th mat-header-cell *matHeaderCellDef> Acciones </th>
+      <td mat-cell *matCellDef="let element">
+        <div class="justify-self-center">
+          <button  [routerLink]="'/'+ element.idItem + '/inicio'">
+            <mat-icon aria-hidden="false" fontIcon="link"></mat-icon>
+          </button>
+        </div>
+      </td>
+    </ng-container>
     <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayColumns;"></tr>
   </table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                 showFirstLastButtons 
+                 [length]="datasourceTable.data.length"
+                 aria-label="Select page of periodic elements">
+  </mat-paginator>
+</div>
+
