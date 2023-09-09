@@ -48,6 +48,7 @@ import { MenuComponent } from './components/menu/menu.component';
     MenuComponent
   ],
   imports: [
+    // MODULOS DE ANGULAR
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -82,6 +83,7 @@ import { MenuComponent } from './components/menu/menu.component';
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
+    // COMPONENTES A RUTEAR
     RouterModule.forRoot([
       {
         path:':id/inicio',

@@ -7,10 +7,12 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./inicio.component.scss']
 })
 export class InicioComponent {
+  // VARIABLE PARA OBTENER EL ID DE LA URL
   idInicio: number = 0;
   constructor(
     private route : ActivatedRoute
   ){
+    // OBTENER EL ID DE LA URL
     this.idInicio = +(this.route.snapshot.paramMap.get('id') ?? 0);
   }
 

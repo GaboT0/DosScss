@@ -8,17 +8,18 @@ import { MatTableDataSource } from '@angular/material/table';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent {
+  // TIPO DE DATOS QUE MANEJARA LA TABLA
   datasourceTable : MatTableDataSource<MenuDatos> =  new MatTableDataSource<MenuDatos>();
+  // COLUMNAS QUE HABRAN EN LA TABLA
   displayColumns = ['ID','Nombre','Precio', 'Descripcion','Acciones'];
+  // PAGINADOR DE LA TABLA
   @ViewChild(MatPaginator) paginator: MatPaginator | undefined;
-
-  
-  
+    
   constructor(
+    // SERVICIO PARA OBTENER LAS RUTAS
     private route: ActivatedRoute
   ){
-    
-    
+       
 
   }
 
@@ -72,6 +73,7 @@ export class MenuComponent {
   }
 }
 
+// TIPO DE DATOS QUE MANEJARA LA TABLA
 type MenuDatos = {
   idItem?:number,
   nombre?:string,
